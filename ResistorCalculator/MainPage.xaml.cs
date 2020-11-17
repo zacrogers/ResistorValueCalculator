@@ -55,27 +55,35 @@ namespace ResistorCalculator
 
         private void UpdateResistorValueLabel()
         {
-            long resistorVal = ((band1Value * 10) + (band2Value)) * (int)Math.Pow(10, multiplier);
+            float resistorVal = (((band1Value * 10.0f) + (band2Value)) / 10.0f) * (float)Math.Pow(10, multiplier);
+            string str_end = "\u03A9" + "\u00B1" + $"{tolerance}%";
 
             if (resistorVal < 1000)
             {
-                ResistorValue.Text = (resistorVal).ToString() + "\u00B1" + $"{tolerance}%";
+                ResistorValue.Text = (resistorVal).ToString() + str_end;
                 return;
             }
-            if (resistorVal > 999999)
+            /* Giga ohms */
+            else if (resistorVal > 999999999)
+            {
+                resistorVal = resistorVal / 1000000000;
+                ResistorValue.Text = (resistorVal).ToString() + "G" + str_end;
+                return;
+            }
+            /* Mega ohms */
+            else if (resistorVal > 999999)
             {
                 resistorVal = resistorVal / 1000000;
-                ResistorValue.Text = (resistorVal).ToString() + "M" + "\u00B1" + $"{tolerance}%";
+                ResistorValue.Text = (resistorVal).ToString() + "M" + str_end;
                 return;
             }
+            /* Kilo ohms */
             else if (resistorVal > 999)
             {
                 resistorVal = resistorVal / 1000;
-                ResistorValue.Text = (resistorVal).ToString() + "k" + "\u00B1" + $"{tolerance}%";
+                ResistorValue.Text = (resistorVal).ToString() + "k" + str_end;
                 return;
             }
-
-
         }
 
         private void ToolbarItem_Activated(object sender, EventArgs e)
