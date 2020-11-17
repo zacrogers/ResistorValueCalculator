@@ -2,10 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ResistorCalculator.MainPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="4-Band"
+                     Activated="ToolbarItem_Activated"/>
+        <ToolbarItem Text="5-Band"
+                     Activated="ToolbarItem_Activated"/>
+        <ToolbarItem Text="6-Band"
+                     Activated="ToolbarItem_Activated"/>
+    </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <Grid x:Name="valPickerGrid" HorizontalOptions="Fill">
+        <Grid x:Name="valPickerGrid" 
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="Fill">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -14,7 +26,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+
             <ListView x:Name="ResistorBand1ListView"
                       ItemsSource="{Binding Values}"
                       Grid.Row="0"
@@ -33,16 +45,13 @@
                                Margin="8"
                                FontAttributes="Bold"
                                FontSize="Medium" />
-                                <Label Text="{Binding BandColour}"
-                               Margin="8,2,8,4"
-                               FontSize="Small" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
 
                 </ListView.ItemTemplate>
             </ListView>
-            
+
             <ListView x:Name="ResistorBand2ListView"
                       ItemsSource="{Binding Values}"
                       Grid.Row="0"
@@ -61,15 +70,12 @@
                                Margin="8"
                                FontAttributes="Bold"
                                FontSize="Medium" />
-                                <Label Text="{Binding BandColour}"
-                               Margin="8,2,8,4"
-                               FontSize="Small" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+
             <ListView x:Name="ResistorBand3ListView"
                       ItemsSource="{Binding Values}"
                       Grid.Row="0"
@@ -88,15 +94,39 @@
                                Margin="8"
                                FontAttributes="Bold"
                                FontSize="Medium" />
-                                <Label Text="{Binding BandColour}"
-                               Margin="8,2,8,4"
-                               FontSize="Small" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView x:Name="ResistorBand4ListView"
+                      ItemsSource="{Binding Values}"
+                      Grid.Row="0"
+                      Grid.Column="3"
+                      HasUnevenRows="True"
+                      BackgroundColor="#ecf0f1"
+                      SeparatorVisibility="None"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="6,4,6,4"
+                                 BackgroundColor="{Binding BandColour}">
+                                <Label Text="{Binding BandVal}"
+                               Margin="8"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
+        <Label x:Name="ResistorValue"
+               Text=""
+               FontSize = "20"
+               TextColor="Black"/>
     </StackLayout>
-
 </ContentPage>
