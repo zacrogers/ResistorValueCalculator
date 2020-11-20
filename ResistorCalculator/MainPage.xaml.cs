@@ -22,7 +22,9 @@ namespace ResistorCalculator
         {
             InitializeComponent();
             BindingContext = new ViewModels.ResistorBandViewModel();
-            
+
+            UpdateResistorValueLabel();
+
             /* Update display label when listview selection happens */
             ResistorBand1ListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
@@ -48,7 +50,8 @@ namespace ResistorCalculator
             ResistorBand4ListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
                 var item = (ResistorBand)e.SelectedItem;
-                tolerance = (float)item.BandVal;
+                //tolerance = (float)item.BandVal;
+                tolerance = (float)item.Tolerance;
                 UpdateResistorValueLabel();
             };
         }
@@ -56,7 +59,7 @@ namespace ResistorCalculator
         private void UpdateResistorValueLabel()
         {
             float resistorVal = (((band1Value * 10.0f) + (band2Value)) / 10.0f) * (float)Math.Pow(10, multiplier);
-            string str_end = "\u03A9" + "\u00B1" + $"{tolerance}%";
+            string str_end = "\u03A9" + "\u00B1" + $"{tolerance}%"; /* "\u03A9" = omega, "\u00B1" = +- */
 
             if (resistorVal < 1000)
             {

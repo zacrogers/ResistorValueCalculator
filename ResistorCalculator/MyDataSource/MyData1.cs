@@ -12,52 +12,62 @@ namespace ResistorCalculator.MyDataSource
             new ResistorBand()
             { 
                 BandVal = 0,
-                BandColour = "Black"
+                BandColour = "Black",
+                Tolerance = 20.0f
             },
             new ResistorBand()
             {
                 BandVal = 1,
-                BandColour = "Brown"
+                BandColour = "Brown",
+                Tolerance = 1.0f
             },
             new ResistorBand()
             {
                 BandVal = 2,
-                BandColour = "Red"
+                BandColour = "Red",
+                Tolerance = 2.0f
             },
             new ResistorBand()
             {
                 BandVal = 3,
-                BandColour = "Orange"
+                BandColour = "Orange",
+                Tolerance = 3.0f
             },
             new ResistorBand()
             {
                 BandVal = 4,
-                BandColour = "Yellow"
+                BandColour = "Yellow",
+                Tolerance = 0.0f
             },
             new ResistorBand()
             {
                 BandVal = 5,
-                BandColour = "Green"
+                BandColour = "Green",
+                Tolerance = 0.5f
             },
             new ResistorBand()
             {
                 BandVal = 6,
-                BandColour = "Blue"
+                BandColour = "Blue",
+                Tolerance = 0.25f
             },
             new ResistorBand()
             {
                 BandVal = 7,
-                BandColour = "#a834eb"
+                BandColour = "#a834eb",
+                Tolerance = 0.10f
             },
             new ResistorBand()
             {
                 BandVal = 8,
-                BandColour = "#808080"
+                BandColour = "#808080",
+                Tolerance = 0.05f
             },
             new ResistorBand()
             {
                 BandVal = 9,
-                BandColour = "White"
+                BandColour = "White",
+                Tolerance = 10.0f
             }
         };
 
