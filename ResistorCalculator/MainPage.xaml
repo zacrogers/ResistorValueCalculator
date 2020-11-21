@@ -12,134 +12,18 @@
                      Activated="SixBandToolbarItem_Activated"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
-        <Grid x:Name="valPickerGrid" 
-              VerticalOptions="FillAndExpand" 
-              HorizontalOptions="Fill">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <ListView x:Name="ResistorBand1ListView"
-                      ItemsSource="{Binding Values}"
-                      Grid.Row="0"
-                      Grid.Column="0"
-                      HasUnevenRows="True"
-                      BackgroundColor="#ecf0f1"
-                      SeparatorVisibility="None"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Margin="6,4,6,4"
-                                         BackgroundColor="{Binding BandColour}">
-                                <Label Text="{Binding BandVal}"
-                                       Margin="8"
-                                       FontAttributes="Bold"
-                                       FontSize="Medium" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView x:Name="ResistorBand2ListView"
-                      ItemsSource="{Binding Values}"
-                      Grid.Row="0"
-                      Grid.Column="1"
-                      HasUnevenRows="True"
-                      BackgroundColor="#ecf0f1"
-                      SeparatorVisibility="None"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Margin="6,4,6,4"
-                                         BackgroundColor="{Binding BandColour}">
-                                <Label Text="{Binding BandVal}"
-                                       Margin="8"
-                                       FontAttributes="Bold"
-                                       FontSize="Medium" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView x:Name="ResistorBand3ListView"
-                      ItemsSource="{Binding Values}"
-                      Grid.Row="0"
-                      Grid.Column="2"
-                      HasUnevenRows="True"
-                      BackgroundColor="#ecf0f1"
-                      SeparatorVisibility="None"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Margin="6,4,6,4"
-                                         BackgroundColor="{Binding BandColour}">
-                                <Label Text="{Binding BandVal}"
-                                       Margin="8"
-                                       FontAttributes="Bold"
-                                       FontSize="Medium" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <ListView x:Name="ResistorBand4ListView"
-                      ItemsSource="{Binding Values}"
-                      Grid.Row="0"
-                      Grid.Column="3"
-                      HasUnevenRows="True"
-                      BackgroundColor="#ecf0f1"
-                      SeparatorVisibility="None"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Margin="6,4,6,4"
-                                         BackgroundColor="{Binding BandColour}">
-                                <Label Text="{Binding BandVal}"
-                                       Margin="8"
-                                       FontAttributes="Bold"
-                                       FontSize="Medium" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <Label x:Name="ResistorValue"
-                   Grid.Row="1"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="4"
-                   Margin="0, 20, 20, 0"
-                   FontSize = "20"
-                   TextColor="Black"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-        </Grid>
+    <StackLayout VerticalOptions="EndAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 BackgroundColor="White">
+        
         <StackLayout WidthRequest="200"
                      HeightRequest="100"
+                     Margin="0, 50, 0, 0"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
+
             <Grid x:Name="iconColourDisplayGrid" 
-                  VerticalOptions="FillAndExpand" 
+                  VerticalOptions="EndAndExpand" 
                   HorizontalOptions="Center"
                   ColumnSpacing="0"
                   RowSpacing="0">
@@ -193,7 +77,7 @@
                              Margin="0"
                              Padding="0"
                              HorizontalOptions="FillAndExpand"/>
-                
+
                 <StackLayout Grid.Column="6"
                              Grid.Row="0"
                              Grid.ColumnSpan="2"
@@ -207,8 +91,136 @@
                        Grid.Row="0"
                        Grid.ColumnSpan="8"
                        HorizontalOptions="FillAndExpand"
-                       VerticalOptions="FillAndExpand"/>
+                       VerticalOptions="EndAndExpand"/>
 
+            </Grid>
+        </StackLayout>
+        
+        <Label x:Name="ResistorValue"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               Margin="0, 0, 0, 150"
+               FontSize = "30"
+               TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="FillAndExpand"/>
+        
+        <StackLayout VerticalOptions="EndAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     MinimumHeightRequest="500">
+            
+            <Grid x:Name="valPickerGrid" 
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="Fill">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <ListView x:Name="ResistorBand1ListView"
+                          ItemsSource="{Binding Values}"
+                          Grid.Row="0"
+                          Grid.Column="0"
+                          HasUnevenRows="True"
+                          BackgroundColor="#ecf0f1"
+                          SeparatorVisibility="None"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="6,4,6,4"
+                                             BackgroundColor="{Binding BandColour}">
+                                    <Label Text="{Binding BandVal}"
+                                           Margin="8"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="ResistorBand2ListView"
+                          ItemsSource="{Binding Values}"
+                          Grid.Row="0"
+                          Grid.Column="1"
+                          HasUnevenRows="True"
+                          BackgroundColor="#ecf0f1"
+                          SeparatorVisibility="None"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="6,4,6,4"
+                                             BackgroundColor="{Binding BandColour}">
+                                    <Label Text="{Binding BandVal}"
+                                           Margin="8"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="ResistorBand3ListView"
+                          ItemsSource="{Binding Values}"
+                          Grid.Row="0"
+                          Grid.Column="2"
+                          HasUnevenRows="True"
+                          BackgroundColor="#ecf0f1"
+                          SeparatorVisibility="None"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="6,4,6,4"
+                                             BackgroundColor="{Binding BandColour}">
+                                    <Label Text="{Binding BandVal}"
+                                           Margin="8"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="ResistorBand4ListView"
+                          ItemsSource="{Binding Values}"
+                          Grid.Row="0"
+                          Grid.Column="3"
+                          HasUnevenRows="True"
+                          BackgroundColor="#ecf0f1"
+                          SeparatorVisibility="None"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="6,4,6,4"
+                                             BackgroundColor="{Binding BandColour}">
+                                    <Label Text="{Binding BandVal}"
+                                           Margin="8"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </StackLayout>
     </StackLayout>
