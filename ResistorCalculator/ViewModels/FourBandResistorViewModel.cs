@@ -13,19 +13,11 @@ namespace ResistorCalculator.ViewModels
     class FourBandResistorViewModel : INotifyPropertyChanged
     {
         #region Fields
-        
-       
+        /*
         int band1Value = 0;
         int band2Value = 0;
         int multiplier = 0;
         float tolerance = 0.0f;
-        /*
-
-
-        Color band1Color;
-        Color band2Color;
-        Color band3Color;
-        Color band4Color;
         */
 
         ResistorBand band1ItemSelected;
@@ -33,7 +25,7 @@ namespace ResistorCalculator.ViewModels
         ResistorBand band3ItemSelected;
         ResistorBand band4ItemSelected;
 
-#endregion
+        #endregion
 
         #region Constructor
         public FourBandResistorViewModel()
@@ -133,7 +125,6 @@ namespace ResistorCalculator.ViewModels
             set
             {
                 band1ItemSelected = value;
-                //Band1Color = Color.FromHex(band1ItemSelected.BandColour);
                 //Band1Value = band1ItemSelected.BandVal;
                 OnPropertyChanged("Band1ItemSelected");
                 OnPropertyChanged("CurrentResistorValue");
@@ -148,7 +139,6 @@ namespace ResistorCalculator.ViewModels
             set
             {
                 band2ItemSelected = value;
-                //Band2Color = Color.FromHex(band2ItemSelected.BandColour);
                 //Band2Value = band2ItemSelected.BandVal;
                 OnPropertyChanged("Band2ItemSelected");
                 OnPropertyChanged("CurrentResistorValue");
@@ -163,7 +153,6 @@ namespace ResistorCalculator.ViewModels
             set
             {
                 band3ItemSelected = value;
-                //Band3Color = Color.FromHex(band3ItemSelected.BandColour);
                 //Multiplier = band3ItemSelected.BandVal;
                 OnPropertyChanged("Band3ItemSelected");
                 OnPropertyChanged("CurrentResistorValue");
@@ -178,62 +167,11 @@ namespace ResistorCalculator.ViewModels
             set
             {
                 band4ItemSelected = value;
-                //Band4Color = Color.FromHex(band4ItemSelected.BandColour);
                 //Tolerance = band4ItemSelected.BandVal;
                 OnPropertyChanged("Band4ItemSelected");
                 OnPropertyChanged("CurrentResistorValue");
             }
         }
-        /*
-        public Color Band1Color
-        {
-            get
-            {
-                return band1Color;
-            }
-            set
-            {
-                band1Color = value;
-                OnPropertyChanged("Band1Color");
-            }
-        }
-        public Color Band2Color
-        {
-            get 
-            {
-                return band2Color;
-            }
-            set 
-            {
-                band2Color = value;
-                OnPropertyChanged("Band2Color");
-            }
-        }
-        public Color Band3Color
-        {
-            get 
-            {
-                return band3Color;
-            }
-            set
-            {
-                band3Color = value;
-                OnPropertyChanged("Band3Color");
-            }
-        }
-        public Color Band4Color 
-        {
-            get
-            {
-                return band4Color;
-            }
-            set
-            {
-                band4Color = value;
-                OnPropertyChanged("Band4Color");
-            }
-        }
-        */
         #endregion
 
         #region Methods
@@ -243,30 +181,6 @@ namespace ResistorCalculator.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        /*
-        public void Band1ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = (ResistorBand)e.SelectedItem;
-            Band1Color = Color.FromHex(item.BandColour);
-        }
-        public void Band2ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = (ResistorBand)e.SelectedItem;
-            Band1Color = Color.FromHex(item.BandColour);
-        }
-
-        public void Band3ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = (ResistorBand)e.SelectedItem;
-            Band1Color = Color.FromHex(item.BandColour);
-        }
-
-        public void Band4ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = (ResistorBand)e.SelectedItem;
-            Band1Color = Color.FromHex(item.BandColour);
-        }
-        */
         private string CalculateResistorValue()
         {
             /*
