@@ -11,7 +11,11 @@ namespace ResistorCalculator
 {
     public partial class MainPage : ContentPage
     {
-        public int CurrentResistorValue = 100;
+        /*
+        public readonly int ScreenHeight = App.ScreenHeight;
+        public readonly int ScreenWidth = App.ScreenWidth;
+
+        //public int CurrentResistorValue = 100;
 
         public int band1Value = 0;
         public int band2Value = 0;
@@ -22,15 +26,24 @@ namespace ResistorCalculator
         public string band2Col = string.Empty;
         public string band3Col = string.Empty;
         public string band4Col = string.Empty;
+        */
 
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.ResistorBandViewModel();
+            //BindingContext = new ViewModels.ResistorBandViewModel();
 
-            UpdateResistorValueLabel();
+            var model = new ViewModels.FourBandResistorViewModel();
+
+            BindingContext = model;
+
+            //resistorIconLayout.Margin = new Thickness(0, ScreenHeight/10, 0, 0);
+            //ResistorValueLabel.Margin = new Thickness(0, 0, 0, ScreenHeight/5);
+
+            //UpdateResistorValueLabel();
 
             /* Update display label when listview selection happens */
+            /*
             ResistorBand1ListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
                 var item = (ResistorBand)e.SelectedItem;
@@ -38,7 +51,7 @@ namespace ResistorCalculator
                 band1IconColour.BackgroundColor = Color.FromHex(item.BandColour);
                 UpdateResistorValueLabel();
             };
-
+            
             ResistorBand2ListView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
                 var item = (ResistorBand)e.SelectedItem;
@@ -63,40 +76,43 @@ namespace ResistorCalculator
                 band4IconColour.BackgroundColor = Color.FromHex(item.BandColour);
                 UpdateResistorValueLabel();
             };
+            */
         }
 
+        /*
         private void UpdateResistorValueLabel()
         {
             float resistorVal = (((band1Value * 10.0f) + (band2Value)) / 10.0f) * (float)Math.Pow(10, multiplier);
-            string str_end = "\u03A9" + "\u00B1" + $"{tolerance}%"; /* "\u03A9" = omega, "\u00B1" = +- */
+            string str_end = "\u03A9" + "\u00B1" + $"{tolerance}%"; // "\u03A9" = omega, "\u00B1" = +- 
 
             if (resistorVal < 1000)
             {
-                ResistorValue.Text = (resistorVal).ToString() + str_end;
+                ResistorValueLabel.Text = (resistorVal).ToString() + str_end;
                 return;
             }
-            /* Giga ohms */
+            // Giga ohms 
             else if (resistorVal > 999999999)
             {
                 resistorVal = resistorVal / 1000000000;
-                ResistorValue.Text = (resistorVal).ToString() + "G" + str_end;
+                ResistorValueLabel.Text = (resistorVal).ToString() + "G" + str_end;
                 return;
             }
-            /* Mega ohms */
+            // Mega ohms 
             else if (resistorVal > 999999)
             {
                 resistorVal = resistorVal / 1000000;
-                ResistorValue.Text = (resistorVal).ToString() + "M" + str_end;
+                ResistorValueLabel.Text = (resistorVal).ToString() + "M" + str_end;
                 return;
             }
-            /* Kilo ohms */
+            // Kilo ohms 
             else if (resistorVal > 999)
             {
                 resistorVal = resistorVal / 1000;
-                ResistorValue.Text = (resistorVal).ToString() + "k" + str_end;
+                ResistorValueLabel.Text = (resistorVal).ToString() + "k" + str_end;
                 return;
             }
         }
+            */
 
         private void ToolbarItem_Activated(object sender, EventArgs e)
         {

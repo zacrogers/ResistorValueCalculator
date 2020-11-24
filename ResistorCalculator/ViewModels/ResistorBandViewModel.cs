@@ -30,8 +30,6 @@ namespace ResistorCalculator.ViewModels
             {
                 Values.Add(band);
             }
-
-
         }
     }
 }

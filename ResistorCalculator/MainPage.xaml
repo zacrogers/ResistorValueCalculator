@@ -16,11 +16,17 @@
                  HorizontalOptions="FillAndExpand"
                  BackgroundColor="White">
         
-        <StackLayout WidthRequest="200"
+        <!--#region Resistor icon display-->
+        <StackLayout x:Name="resistorIconLayout"
+                     WidthRequest="200"
                      HeightRequest="100"
                      Margin="0, 50, 0, 0"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
+            
+            <Label Text="{Binding Band1ItemSelected.BandColour}"
+                   FontSize = "30"
+               TextColor="Black"/>
 
             <Grid x:Name="iconColourDisplayGrid" 
                   VerticalOptions="EndAndExpand" 
@@ -55,28 +61,32 @@
                              Grid.Row="0"
                              Margin="0"
                              Padding="0"
-                             HorizontalOptions="FillAndExpand"/>
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{Binding Band1ItemSelected.Color}"/>
 
                 <StackLayout x:Name="band2IconColour" 
                              Grid.Column="3"
                              Grid.Row="0"
                              Margin="0"
                              Padding="0"
-                             HorizontalOptions="FillAndExpand"/>
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{Binding Band2ItemSelected.Color}"/>
 
                 <StackLayout x:Name="band3IconColour" 
                              Grid.Column="4"
                              Grid.Row="0"
                              Margin="0"
                              Padding="0"
-                             HorizontalOptions="FillAndExpand"/>
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{Binding Band3ItemSelected.Color}"/>
 
                 <StackLayout x:Name="band4IconColour"
                              Grid.Column="5"
                              Grid.Row="0"
                              Margin="0"
                              Padding="0"
-                             HorizontalOptions="FillAndExpand"/>
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{Binding Band4ItemSelected.Color}"/>
 
                 <StackLayout Grid.Column="6"
                              Grid.Row="0"
@@ -95,17 +105,22 @@
 
             </Grid>
         </StackLayout>
+        <!--#endregion-->
         
-        <Label x:Name="ResistorValue"
+        <!--#region Resistor value label -->
+        <Label x:Name="ResistorValueLabel"
                Grid.Row="1"
                Grid.Column="0"
                Grid.ColumnSpan="4"
-               Margin="0, 0, 0, 150"
+               Text="{Binding CurrentResistorValue}"
+               Margin="0, 0, 0, 50"
                FontSize = "30"
                TextColor="Black"
                HorizontalOptions="Center"
                VerticalOptions="FillAndExpand"/>
+        <!--#endregion-->
         
+        <!--#region Resistor value picker -->
         <StackLayout VerticalOptions="EndAndExpand"
                      HorizontalOptions="FillAndExpand"
                      MinimumHeightRequest="500">
@@ -127,9 +142,10 @@
                 </Grid.RowDefinitions>
 
                 <ListView x:Name="ResistorBand1ListView"
-                          ItemsSource="{Binding Values}"
+                          ItemsSource="{Binding BandValues}"
                           Grid.Row="0"
                           Grid.Column="0"
+                          SelectedItem="{Binding Band1ItemSelected}"
                           HasUnevenRows="True"
                           BackgroundColor="#ecf0f1"
                           SeparatorVisibility="None"
@@ -151,9 +167,10 @@
                 </ListView>
 
                 <ListView x:Name="ResistorBand2ListView"
-                          ItemsSource="{Binding Values}"
+                          ItemsSource="{Binding BandValues}"
                           Grid.Row="0"
                           Grid.Column="1"
+                          SelectedItem="{Binding Band2ItemSelected}"
                           HasUnevenRows="True"
                           BackgroundColor="#ecf0f1"
                           SeparatorVisibility="None"
@@ -175,9 +192,10 @@
                 </ListView>
 
                 <ListView x:Name="ResistorBand3ListView"
-                          ItemsSource="{Binding Values}"
+                          ItemsSource="{Binding BandValues}"
                           Grid.Row="0"
                           Grid.Column="2"
+                          SelectedItem="{Binding Band3ItemSelected}"
                           HasUnevenRows="True"
                           BackgroundColor="#ecf0f1"
                           SeparatorVisibility="None"
@@ -199,9 +217,10 @@
                 </ListView>
 
                 <ListView x:Name="ResistorBand4ListView"
-                          ItemsSource="{Binding Values}"
+                          ItemsSource="{Binding BandValues}"
                           Grid.Row="0"
                           Grid.Column="3"
+                          SelectedItem="{Binding Band4ItemSelected}"
                           HasUnevenRows="True"
                           BackgroundColor="#ecf0f1"
                           SeparatorVisibility="None"
@@ -223,6 +242,7 @@
                 </ListView>
             </Grid>
         </StackLayout>
+        <!--#endregion-->
     </StackLayout>
     
 </ContentPage>
