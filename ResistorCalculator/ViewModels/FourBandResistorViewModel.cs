@@ -49,6 +49,7 @@ namespace ResistorCalculator.ViewModels
 
         #region Properties
         public ObservableCollection<ResistorBand> BandValues { get; set; }
+
         public string CurrentResistorValue
         {
             get{ return $"{CalculateResistorValue()} \u03A9 \u00B1 {tolerance}%"; }
@@ -70,6 +71,7 @@ namespace ResistorCalculator.ViewModels
                 }
             }
         }
+
         public ResistorBand Band2ItemSelected
         {
             get{ return band2ItemSelected; }
@@ -86,6 +88,7 @@ namespace ResistorCalculator.ViewModels
                 }
             }
         }
+
         public ResistorBand Band3ItemSelected 
         {
             get{ return band3ItemSelected; }
@@ -102,6 +105,7 @@ namespace ResistorCalculator.ViewModels
                 }
             }
         }
+
         public ResistorBand Band4ItemSelected
         {
             get{ return band4ItemSelected; }
@@ -113,7 +117,7 @@ namespace ResistorCalculator.ViewModels
 
                 if (band4ItemSelected != null)
                 {
-                    tolerance = band4ItemSelected.BandVal;
+                    tolerance = band4ItemSelected.Tolerance;
                     OnPropertyChanged("CurrentResistorValue");
                 }
             }
