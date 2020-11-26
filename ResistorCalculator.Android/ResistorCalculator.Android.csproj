@@ -85,7 +85,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\resistorAppIconBig.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ResistorCalculator\ResistorCalculator.csproj">
       <Project>{02821C67-7645-400F-BCBE-026AACDACB81}</Project>
