@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ResistorCalculator.MainPage">
-    
+    <!--#region Toolbar -->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="4-Band"
                      Activated="FourBandToolbarItem_Activated"/>
@@ -11,11 +11,12 @@
         <ToolbarItem Text="6-Band"
                      Activated="SixBandToolbarItem_Activated"/>
     </ContentPage.ToolbarItems>
+    <!--#endregion-->
 
     <StackLayout VerticalOptions="EndAndExpand"
                  HorizontalOptions="FillAndExpand"
                  BackgroundColor="White">
-        
+
         <!--#region Resistor icon display-->
         <StackLayout x:Name="resistorIconLayout"
                      WidthRequest="200"
@@ -23,10 +24,6 @@
                      Margin="0, 50, 0, 0"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
-            
-            <Label Text="{Binding Band1ItemSelected.BandColour}"
-                   FontSize = "30"
-               TextColor="Black"/>
 
             <Grid x:Name="iconColourDisplayGrid" 
                   VerticalOptions="EndAndExpand" 
@@ -102,33 +99,32 @@
                        Grid.ColumnSpan="8"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="EndAndExpand"/>
-
             </Grid>
         </StackLayout>
         <!--#endregion-->
-        
+
         <!--#region Resistor value label -->
         <Label x:Name="ResistorValueLabel"
                Grid.Row="1"
                Grid.Column="0"
                Grid.ColumnSpan="4"
-               Text="{Binding CurrentResistorValue}"
+               Text="{Binding CurrentResistorValue, TargetNullValue='Value not found'}"
                Margin="0, 0, 0, 50"
                FontSize = "30"
                TextColor="Black"
                HorizontalOptions="Center"
                VerticalOptions="FillAndExpand"/>
         <!--#endregion-->
-        
+
         <!--#region Resistor value picker -->
         <StackLayout VerticalOptions="EndAndExpand"
                      HorizontalOptions="FillAndExpand"
                      MinimumHeightRequest="500">
-            
+
             <Grid x:Name="valPickerGrid" 
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="Fill">
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -151,6 +147,7 @@
                           SeparatorVisibility="None"
                           HorizontalOptions="FillAndExpand"
                           VerticalOptions="FillAndExpand">
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -176,6 +173,7 @@
                           SeparatorVisibility="None"
                           HorizontalOptions="FillAndExpand"
                           VerticalOptions="FillAndExpand">
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -201,6 +199,7 @@
                           SeparatorVisibility="None"
                           HorizontalOptions="FillAndExpand"
                           VerticalOptions="FillAndExpand">
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -226,6 +225,7 @@
                           SeparatorVisibility="None"
                           HorizontalOptions="FillAndExpand"
                           VerticalOptions="FillAndExpand">
+
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -244,5 +244,4 @@
         </StackLayout>
         <!--#endregion-->
     </StackLayout>
-    
 </ContentPage>

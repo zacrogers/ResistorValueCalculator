@@ -13,13 +13,12 @@ namespace ResistorCalculator.ViewModels
     class FourBandResistorViewModel : INotifyPropertyChanged
     {
         #region Fields
-        /*
-        int band1Value = 0;
-        int band2Value = 0;
-        int multiplier = 0;
-        float tolerance = 0.0f;
-        */
 
+        int   band1Value = 1;
+        int   band2Value = 1;
+        int   multiplier = 1;
+        float tolerance  = 1.0f;
+        
         ResistorBand band1ItemSelected;
         ResistorBand band2ItemSelected;
         ResistorBand band3ItemSelected;
@@ -52,124 +51,71 @@ namespace ResistorCalculator.ViewModels
         public ObservableCollection<ResistorBand> BandValues { get; set; }
         public string CurrentResistorValue
         {
-            get
-            {
-                int holder = 1;
-                return $"{CalculateResistorValue()} \u03A9 \u00B1 {holder}%";
-            }
+            get{ return $"{CalculateResistorValue()} \u03A9 \u00B1 {tolerance}%"; }
         }
 
-        /*
-        public int Band1Value
-        {
-            get
-            {
-                return band1Value;
-            }
-            set
-            {
-                band1Value = 100;
-                OnPropertyChanged("Band1Value");
-                OnPropertyChanged(nameof(CurrentResistorValue));
-            }
-        }
-
-        public int Band2Value
-        {
-            get
-            {
-                return band2Value;
-            }
-            set
-            {
-                band2Value = value;
-                OnPropertyChanged("Band2Value");
-                OnPropertyChanged(nameof(CurrentResistorValue));
-            }
-        }
-
-        public int Multiplier
-        {
-            get
-            {
-                return multiplier;
-            }
-            set
-            {
-                multiplier = value;
-                OnPropertyChanged("Multiplier");
-                OnPropertyChanged(nameof(CurrentResistorValue));
-            }
-        }
-
-        public float Tolerance
-        {
-            get
-            {
-                return tolerance;
-            }
-            set
-            {
-                tolerance = value;
-                OnPropertyChanged("Tolerance");
-                OnPropertyChanged(nameof(CurrentResistorValue));
-            }
-        }
-        */
         public ResistorBand Band1ItemSelected
         {
-            get
-            {
-                return band1ItemSelected;
-            }
+            get{ return band1ItemSelected; }
+
             set
             {
                 band1ItemSelected = value;
-                //Band1Value = band1ItemSelected.BandVal;
                 OnPropertyChanged("Band1ItemSelected");
-                OnPropertyChanged("CurrentResistorValue");
+
+                if(band1ItemSelected != null)
+                {
+                    band1Value = band1ItemSelected.BandVal;
+                    OnPropertyChanged("CurrentResistorValue");
+                }
             }
         }
         public ResistorBand Band2ItemSelected
         {
-            get
-            {
-                return band2ItemSelected;
-            }
+            get{ return band2ItemSelected; }
+
             set
             {
                 band2ItemSelected = value;
-                //Band2Value = band2ItemSelected.BandVal;
                 OnPropertyChanged("Band2ItemSelected");
-                OnPropertyChanged("CurrentResistorValue");
+
+                if (band2ItemSelected != null)
+                {
+                    band2Value = band2ItemSelected.BandVal;
+                    OnPropertyChanged("CurrentResistorValue");
+                }
             }
         }
         public ResistorBand Band3ItemSelected 
         {
-            get
-            {
-                return band3ItemSelected;
-            }
+            get{ return band3ItemSelected; }
+
             set
             {
                 band3ItemSelected = value;
-                //Multiplier = band3ItemSelected.BandVal;
                 OnPropertyChanged("Band3ItemSelected");
-                OnPropertyChanged("CurrentResistorValue");
+
+                if (band3ItemSelected != null)
+                {
+                    multiplier = band3ItemSelected.BandVal;
+                    OnPropertyChanged("CurrentResistorValue");
+                }
             }
         }
         public ResistorBand Band4ItemSelected
         {
-            get
-            {
-                return band4ItemSelected;
-            }
+            get{ return band4ItemSelected; }
+
             set
             {
                 band4ItemSelected = value;
-                //Tolerance = band4ItemSelected.BandVal;
                 OnPropertyChanged("Band4ItemSelected");
-                OnPropertyChanged("CurrentResistorValue");
+
+                if (band4ItemSelected != null)
+                {
+                    tolerance = band4ItemSelected.BandVal;
+                    OnPropertyChanged("CurrentResistorValue");
+                }
             }
         }
         #endregion
@@ -182,15 +128,16 @@ namespace ResistorCalculator.ViewModels
         }
 
         private string CalculateResistorValue()
-        {
+        {            
+            int b1 = band1Value;
+            int b2 = band2Value;
+            int mult = multiplier;
+            
             /*
-            int b1 = band1ItemSelected.BandVal;
-            int b2 = band2ItemSelected.BandVal;
-            int mult = band3ItemSelected.BandVal;
-            */
             int b1 = 1;
             int b2 = 1;
             int mult = 1;
+            */
 
             float resistorVal = (((b1 * 10.0f) + b2) / 10.0f) * (float)Math.Pow(10, mult);
             string returnString = string.Empty;
