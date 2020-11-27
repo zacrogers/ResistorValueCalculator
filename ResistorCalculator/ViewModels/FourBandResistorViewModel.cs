@@ -143,7 +143,7 @@ namespace ResistorCalculator.ViewModels
             int mult = 1;
             */
 
-            float resistorVal = (((b1 * 10.0f) + b2) / 10.0f) * (float)Math.Pow(10, mult);
+            float resistorVal = ((b1 * 10.0f) + b2) * (float)Math.Pow(10, mult);
             string returnString = string.Empty;
 
             if (resistorVal < 1000)

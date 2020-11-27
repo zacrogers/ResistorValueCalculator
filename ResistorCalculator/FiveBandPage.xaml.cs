@@ -1,26 +1,21 @@
-﻿using ResistorCalculator.Models;
-using ResistorCalculator.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ResistorCalculator
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class FiveBandPage : ContentPage
     {
-        public MainPage()
+        public FiveBandPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.FourBandResistorViewModel();
-        }
-
-        private void ToolbarItem_Activated(object sender, EventArgs e)
-        {
-
+            BindingContext = new ViewModels.FiveBandResistorViewModel();
         }
 
         private void FourBandToolbarItem_Activated(object sender, EventArgs e)
