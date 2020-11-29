@@ -45,10 +45,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="16"/>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
@@ -98,7 +99,15 @@
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{Binding Band4ItemSelected.Color}"/>
 
-                <StackLayout Grid.Column="6"
+                <StackLayout x:Name="band5IconColour"
+                             Grid.Column="6"
+                             Grid.Row="0"
+                             Margin="0"
+                             Padding="0"
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{Binding Band5ItemSelected.Color}"/>
+
+                <StackLayout Grid.Column="7"
                              Grid.Row="0"
                              Grid.ColumnSpan="2"
                              Margin="0"
@@ -106,17 +115,17 @@
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="Transparent"/>
 
-                <Image Source="resistorAppIconBig"
+                <Image Source="fivebandIconBig"
                        Grid.Column="0"
                        Grid.Row="0"
-                       Grid.ColumnSpan="8"
+                       Grid.ColumnSpan="9"
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="EndAndExpand"/>
 
                 <Label x:Name="ResistorValueLabel"
                        Grid.Column="0"
                        Grid.Row="1"
-                       Grid.ColumnSpan="8"
+                       Grid.ColumnSpan="9"
                        Text="{Binding CurrentResistorValue, TargetNullValue='Value not found'}"
                        Margin="0, 20, 0, 0"
                        FontSize = "23"
