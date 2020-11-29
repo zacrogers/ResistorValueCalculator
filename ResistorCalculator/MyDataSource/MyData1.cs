@@ -1,7 +1,5 @@
-﻿using System;
+﻿using ResistorCalculator.Models;
 using System.Collections.Generic;
-using System.Text;
-using ResistorCalculator.Models;
 using Xamarin.Forms;
 
 namespace ResistorCalculator.MyDataSource
