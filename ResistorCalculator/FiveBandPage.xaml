@@ -115,7 +115,7 @@
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="Transparent"/>
 
-                <Image Source="fivebandIconBig"
+                <Image Source="fiveBand"
                        Grid.Column="0"
                        Grid.Row="0"
                        Grid.ColumnSpan="9"
