@@ -1,19 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ResistorCalculator
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SixBandPage : ContentPage
     {
-        public MainPage()
+        public SixBandPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.FourBandResistorViewModel();
-        }
-
-        private void ToolbarItem_Activated(object sender, EventArgs e)
-        {
-
+            BindingContext = new ViewModels.SixBandResistorViewModel();
         }
 
         private void FourBandToolbarItem_Activated(object sender, EventArgs e)
