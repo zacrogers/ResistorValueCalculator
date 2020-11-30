@@ -14,6 +14,12 @@ namespace ResistorCalculator
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+
+            var tabbedPage = new TabbedPage();
+            tabbedPage.Children.Add(new MainPage());
+            tabbedPage.Children.Add(new FiveBandPage());
+            tabbedPage.Children.Add(new SixBandPage());
+            MainPage = tabbedPage;
         }
 
         protected override void OnStart()

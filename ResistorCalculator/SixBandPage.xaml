@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ResistorCalculator.SixBandPage">
     <!--#region Toolbar -->
+    <!--
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="4-Band"
                      Activated="FourBandToolbarItem_Activated"/>
@@ -11,6 +12,7 @@
         <ToolbarItem Text="6-Band"
                      Activated="SixBandToolbarItem_Activated"/>
     </ContentPage.ToolbarItems>
+    -->
     <!--#endregion-->
 
     <Grid VerticalOptions="FillAndExpand" 
@@ -108,7 +110,7 @@
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{Binding Band5ItemSelected.Color}"/>
 
-                <StackLayout x:Name="band5IconColour"
+                <StackLayout x:Name="band6IconColour"
                              Grid.Column="7"
                              Grid.Row="0"
                              Margin="0"
