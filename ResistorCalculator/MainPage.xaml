@@ -2,18 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ResistorCalculator.MainPage">
-    <!--#region Toolbar -->
-    <!--
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="4-Band"
-                     Activated="FourBandToolbarItem_Activated"/>
-        <ToolbarItem Text="5-Band"
-                     Activated="FiveBandToolbarItem_Activated"/>
-        <ToolbarItem Text="6-Band"
-                     Activated="SixBandToolbarItem_Activated"/>
-    </ContentPage.ToolbarItems>
-    -->
-    <!--#endregion-->
 
     <Grid VerticalOptions="FillAndExpand" 
           HorizontalOptions="Center"

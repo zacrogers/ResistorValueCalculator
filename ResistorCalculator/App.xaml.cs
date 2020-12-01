@@ -16,9 +16,17 @@ namespace ResistorCalculator
             MainPage = new NavigationPage(new MainPage());
 
             var tabbedPage = new TabbedPage();
-            tabbedPage.Children.Add(new MainPage());
-            tabbedPage.Children.Add(new FiveBandPage());
-            tabbedPage.Children.Add(new SixBandPage());
+            var mainPage = new MainPage();
+            var fiveBand = new FiveBandPage();
+            var sixBand = new SixBandPage();
+
+            mainPage.Title = "Four Band";
+            fiveBand.Title = "Five Band";
+            sixBand.Title = "Six Band";
+
+            tabbedPage.Children.Add(mainPage);
+            tabbedPage.Children.Add(fiveBand);
+            tabbedPage.Children.Add(sixBand);
             MainPage = tabbedPage;
         }
 
