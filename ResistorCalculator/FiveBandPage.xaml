@@ -15,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
         <!--#region Resistor icon display-->
@@ -23,7 +24,7 @@
                      Grid.Column="0"
                      WidthRequest="400"
                      HeightRequest="200"
-                     Margin="0, 20, 0, 0"
+                     Margin="0, 50, 0, 0"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
 
@@ -112,23 +113,24 @@
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="EndAndExpand"/>
 
-                <Label x:Name="ResistorValueLabel"
-                       Grid.Column="0"
-                       Grid.Row="1"
-                       Grid.ColumnSpan="9"
-                       Text="{Binding CurrentResistorValue, TargetNullValue='Value not found'}"
-                       Margin="0, 20, 0, 0"
-                       FontSize = "23"
-                       TextColor="Black"
-                       HorizontalOptions="Center"
-                       VerticalOptions="FillAndExpand"/>
+
 
             </Grid>
         </StackLayout>
         <!--#endregion-->
 
+        <Label x:Name="ResistorValueLabel"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Text="{Binding CurrentResistorValue, TargetNullValue='Value not found'}"
+                       Margin="0, 20, 0, 0"
+                       FontSize = "28"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="FillAndExpand"/>
+
         <!--#region Resistor value picker -->
-        <StackLayout Grid.Row="1"
+        <StackLayout Grid.Row="2"
                      Grid.Column="0"
                      VerticalOptions="EndAndExpand"
                      HorizontalOptions="FillAndExpand">
