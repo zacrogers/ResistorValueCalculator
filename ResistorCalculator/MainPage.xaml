@@ -110,6 +110,7 @@
         </StackLayout>
         <!--#endregion-->
 
+        <!--#region Value Label -->
         <Label x:Name="ResistorValueLabel"
                        Grid.Column="0"
                        Grid.Row="1"
@@ -119,6 +120,7 @@
                        FontSize = "28"
                        TextColor="Black"
                        HorizontalOptions="Center"/>
+        <!--#endregion-->
 
         <!--#region Resistor value picker -->
         <StackLayout Grid.Row="2"
