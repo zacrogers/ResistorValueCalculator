@@ -55,7 +55,7 @@ namespace ResistorCalculator.ViewModels
 
         public string CurrentResistorValue
         {
-            get { return $"{CalculateResistorValue()} \u03A9 \u00B1 {tolerance}%"; }
+            get { return $"{CalculateResistorValue()} \u03A9 \u00B1 {tolerance}% {tempCoeff}ppm/N"; }
         }
 
         public ResistorBand Band1ItemSelected
