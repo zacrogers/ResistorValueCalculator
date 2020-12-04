@@ -211,7 +211,7 @@
                 </ListView>
 
                 <ListView x:Name="ResistorBand4ListView"
-                          ItemsSource="{Binding BandValues}"
+                          ItemsSource="{Binding ToleranceBand}"
                           Grid.Row="0"
                           Grid.Column="3"
                           SelectedItem="{Binding Band4ItemSelected}"

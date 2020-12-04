@@ -27,12 +27,18 @@ namespace ResistorCalculator.ViewModels
         public FourBandResistorViewModel()
         {
             BandValues = new ObservableCollection<ResistorBand>();
-            
+            ToleranceBand = new ObservableCollection<ResistorBand>();
+
             MyData1 _context = new MyData1();
 
             foreach (var band in _context.Band1Vals)
             {
                 BandValues.Add(band);
+            }
+
+            foreach (var band in _context.ToleranceBand)
+            {
+                ToleranceBand.Add(band);
             }
 
             band1ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
@@ -46,6 +52,7 @@ namespace ResistorCalculator.ViewModels
 
         #region Properties
         public ObservableCollection<ResistorBand> BandValues { get; set; }
+        public ObservableCollection<ResistorBand> ToleranceBand { get; set; }
 
         public string CurrentResistorValue
         {
