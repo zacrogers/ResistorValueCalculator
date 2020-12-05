@@ -31,26 +31,31 @@ namespace ResistorCalculator.ViewModels
         public FiveBandResistorViewModel()
         {
             BandValues = new ObservableCollection<ResistorBand>();
+            ToleranceBand = new ObservableCollection<ResistorBand>();
 
             MyData1 _context = new MyData1();
 
             foreach (var band in _context.Band1Vals)
             {
-                BandValues.Add(band);
-            }
+                // Exclude silver and gold bands
+                if (!band.BandColour.Equals("#FFFFD700") && !band.BandColour.Equals("#c0c0c0"))
+                {
+                    BandValues.Add(band);
+                }
 
-            band1ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band2ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band3ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band4ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band5ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
+                // Exclude black and white bands
+                if (!band.BandColour.Equals("#000000") && !band.BandColour.Equals("#FFFFFF"))
+                {
+                    ToleranceBand.Add(band);
+                }
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         #region Properties
         public ObservableCollection<ResistorBand> BandValues { get; set; }
-
+        public ObservableCollection<ResistorBand> ToleranceBand { get; set; }
         public string CurrentResistorValue
         {
             get { return $"{CalculateResistorValue()} \u03A9 \u00B1 {tolerance}%"; }

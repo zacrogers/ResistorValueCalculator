@@ -11,10 +11,10 @@ namespace ResistorCalculator.ViewModels
     {
         #region Fields
 
-        int   band1Value = 1;
-        int   band2Value = 1;
-        int   multiplier = 1;
-        float tolerance  = 1.0f;
+        int   band1Value = 0;
+        int   band2Value = 0;
+        int   multiplier = 0;
+        float tolerance  = 0.0f;
         
         ResistorBand band1ItemSelected;
         ResistorBand band2ItemSelected;
@@ -33,18 +33,18 @@ namespace ResistorCalculator.ViewModels
 
             foreach (var band in _context.Band1Vals)
             {
-                BandValues.Add(band);
-            }
+                // Exclude silver and gold bands
+                if (!band.BandColour.Equals("#FFFFD700") && !band.BandColour.Equals("#c0c0c0"))
+                {
+                    BandValues.Add(band);
+                }
 
-            foreach (var band in _context.ToleranceBand)
-            {
-                ToleranceBand.Add(band);
+                // Exclude black and white bands
+                if(!band.BandColour.Equals("#000000") && !band.BandColour.Equals("#FFFFFF"))
+                {
+                    ToleranceBand.Add(band);
+                }
             }
-
-            band1ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band2ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band3ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
-            band4ItemSelected = new ResistorBand(1, Color.FromHex("#000000"), 1, 1.0f);
         }
         #endregion
 
@@ -140,12 +140,6 @@ namespace ResistorCalculator.ViewModels
             int b1 = band1Value;
             int b2 = band2Value;
             int mult = multiplier;
-            
-            /*
-            int b1 = 1;
-            int b2 = 1;
-            int mult = 1;
-            */
 
             float resistorVal = ((b1 * 10.0f) + b2) * (float)Math.Pow(10, mult);
             string returnString = string.Empty;
