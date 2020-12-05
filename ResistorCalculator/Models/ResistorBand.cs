@@ -9,7 +9,7 @@ namespace ResistorCalculator.Models
     {
         public ResistorBand(){ }
         public int BandVal { get; set; }
-        public string BandColour { get; set; }
+        public string Color { get; set; }
         public string Multiplier { get; set; }
         public float Tolerance { get; set; }
         public int TempCoeff { get; set; }

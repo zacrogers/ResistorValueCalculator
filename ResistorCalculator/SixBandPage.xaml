@@ -176,7 +176,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding BandColour}">
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
                                     <Label Margin="8"/>
                                 </StackLayout>
                             </ViewCell>
@@ -198,7 +198,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding BandColour}">
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
                                     <Label Margin="8"/>
                                 </StackLayout>
                             </ViewCell>
@@ -220,7 +220,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding BandColour}">
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
                                     <Label Margin="8"/>
                                 </StackLayout>
                             </ViewCell>
@@ -242,7 +242,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding BandColour}">
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
                                     <Label Margin="8"/>
                                 </StackLayout>
                             </ViewCell>
@@ -264,7 +264,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding BandColour}">
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
                                     <Label Margin="8"/>
                                 </StackLayout>
                             </ViewCell>
@@ -286,7 +286,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding BandColour}">
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
                                     <Label Margin="8"/>
                                 </StackLayout>
                             </ViewCell>

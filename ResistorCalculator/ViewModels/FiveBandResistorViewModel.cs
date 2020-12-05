@@ -38,13 +38,13 @@ namespace ResistorCalculator.ViewModels
             foreach (var band in _context.Band1Vals)
             {
                 // Exclude silver and gold bands
-                if (!band.BandColour.Equals("#FFFFD700") && !band.BandColour.Equals("#c0c0c0"))
+                if (!band.Color.Equals("#FFFFD700") && !band.Color.Equals("#c0c0c0"))
                 {
                     BandValues.Add(band);
                 }
 
                 // Exclude black and white bands
-                if (!band.BandColour.Equals("#000000") && !band.BandColour.Equals("#FFFFFF"))
+                if (!band.Color.Equals("#000000") && !band.Color.Equals("#FFFFFF"))
                 {
                     ToleranceBand.Add(band);
                 }
