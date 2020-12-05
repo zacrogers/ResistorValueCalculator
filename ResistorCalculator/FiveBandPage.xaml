@@ -125,7 +125,7 @@
                        Grid.Row="1"
                        Text="{Binding CurrentResistorValue, TargetNullValue='Value not found'}"
                        Margin="0, 20, 0, 0"
-                       FontSize = "28"
+                       FontSize = "27"
                        TextColor="Black"
                        HorizontalOptions="Center"
                        VerticalOptions="FillAndExpand"/>

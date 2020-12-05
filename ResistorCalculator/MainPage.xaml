@@ -117,7 +117,7 @@
                        Text="{Binding CurrentResistorValue, TargetNullValue='Value not found'}"
                        Margin="0, 20, 0, 0"
                        Padding="0"
-                       FontSize = "28"
+                       FontSize = "27"
                        TextColor="Black"
                        HorizontalOptions="Center"/>
         <!--#endregion-->
