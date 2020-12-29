@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Android.Gms.Ads;
 
 namespace ResistorCalculator.Droid
 {
@@ -21,6 +22,7 @@ namespace ResistorCalculator.Droid
             var App = new App();
             App.ScreenHeight = (int)(Resources.DisplayMetrics.HeightPixels / Resources.DisplayMetrics.Density);
             App.ScreenWidth = (int)(Resources.DisplayMetrics.WidthPixels / Resources.DisplayMetrics.Density);
+            MobileAds.Initialize(ApplicationContext);
 
             LoadApplication(App);
         }
