@@ -17,12 +17,14 @@ namespace ResistorCalculator.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            MobileAds.Initialize(ApplicationContext);//, "ca-app-pub-6573292980163224~7496109813");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             var App = new App();
             App.ScreenHeight = (int)(Resources.DisplayMetrics.HeightPixels / Resources.DisplayMetrics.Density);
             App.ScreenWidth = (int)(Resources.DisplayMetrics.WidthPixels / Resources.DisplayMetrics.Density);
-            MobileAds.Initialize(ApplicationContext);
+            //MobileAds.Initialize(ApplicationContext);
+
 
             LoadApplication(App);
         }
