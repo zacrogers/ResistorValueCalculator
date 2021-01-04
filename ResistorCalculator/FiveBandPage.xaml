@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
              x:Class="ResistorCalculator.FiveBandPage">
 
     <Grid VerticalOptions="FillAndExpand" 
@@ -16,6 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!--#region Resistor icon display-->
@@ -252,18 +254,32 @@
                           HorizontalOptions="FillAndExpand"
                           VerticalOptions="FillAndExpand">
 
-                <ListView.ItemTemplate>
-                       <DataTemplate>
-                           <ViewCell>
-                               <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
-                                   <Label Margin="8"/>
-                               </StackLayout>
-                           </ViewCell>
-                       </DataTemplate>
-                </ListView.ItemTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="6,4,6,4" BackgroundColor="{Binding Color}">
+                                    <Label Margin="8"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
             </Grid>
         </StackLayout>
+        <!--#endregion-->
+
+        <!--#region AdView-->
+        <controls:MTAdView Grid.Row="3"
+                            PersonalizedAds="true" 
+                            IsVisible="true" 
+                            VerticalOptions="End"
+                            AdsId="ca-app-pub-6573292980163224/9363725255">
+            <controls:MTAdView.HeightRequest>
+                <x:OnIdiom>
+                    <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                </x:OnIdiom>
+            </controls:MTAdView.HeightRequest>
+        </controls:MTAdView>
         <!--#endregion-->
     </Grid>
 </ContentPage>
